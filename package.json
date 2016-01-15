@@ -1,0 +1,22 @@
+{
+  "name": "clipboard_history",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j5a/clipboard_history.git"
+  },
+  "author": "Joe Naha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j5a/clipboard_history/issues"
+  },
+  "homepage": "https://github.com/j5a/clipboard_history#readme",
+  "dependencies": {
+    "electron-prebuilt": "^0.36.3"
+  }
+}
