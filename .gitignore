@@ -1,3 +1,9 @@
+# direnv
+.envrc
+
+# .clipboard-history
+.clipboard-history
+
 # Logs
 logs
 *.log
