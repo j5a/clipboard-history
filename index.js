@@ -29,7 +29,9 @@ fs.exists(filename, (exists) => {
     fs.readFile(filename, 'utf8', (err, data) => {
       if (err) throw err;
       var list = JSON.parse(data);
+      if (list.length === 0) return;
       lastString = list[list.length - 1].text;
+      console.log(lastString);
     });
   }
 });
@@ -37,14 +39,16 @@ fs.exists(filename, (exists) => {
 
 setInterval(() => {
   var cb = clipboard.readText();
+  if (!cb) return;
   if (lastString === null || lastString !== cb) {
     fs.readFile(filename, 'utf8', (err, data) => {
       if (err) throw err;
       var list = JSON.parse(data);
-      list.push({text: cb});
+      list.push({utc: Date.now(), text: cb});
       fs.writeFile(filename, JSON.stringify(list), 'utf8');
     });
     lastString = cb;
+    console.log(lastString);
   }
 }, 500);
 
